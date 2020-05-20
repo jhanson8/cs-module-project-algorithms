@@ -4,8 +4,18 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    left = [1] * len(arr)
+    for i in range(1, len(arr)):
+        left[i] = left[i-1] * arr[i-1]
+    
+    right = [1] * len(arr)
+    for i in range(len(arr) -2, -1, -1):
+        right[i] = right[i+1] * arr[i+1]
 
-    pass
+    res = [1] * len(arr)
+    for i in range(len(arr)):
+        res[i] = left[i] * right[i]
+    return res 
 
 
 if __name__ == '__main__':
