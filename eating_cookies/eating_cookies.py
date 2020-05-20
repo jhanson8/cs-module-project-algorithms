@@ -3,7 +3,14 @@ Input: an integer
 Returns: an integer
 '''
 def eating_cookies(n):
-  pass
+  if n == 0:
+    return 1
+  elif n == 1:
+    return  1
+  elif n == 2:
+    return 2
+  else:
+    return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
 
 
 if __name__ == "__main__":
